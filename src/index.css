@@ -56,7 +56,7 @@ body{
         display: none;
     }
     .border-hsla {
-      @apply border border-white/20;
+      @apply border border-white/40;
     }
 
     .nav-hover-btn {

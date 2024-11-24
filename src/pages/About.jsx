@@ -13,15 +13,21 @@ const About = () => {
                 start: 'center center',
                 end: '+=800 center',
                 scrub: true,
-                pin:true,
+                pin: true,
                 pinSpacing: true,
             }
         });
 
-        clipAnimation.to('.mask-clip-path', {
-            width: '100vw',
-            height: '100vh',
-            borderRadius: 0,
+        clipAnimation
+            .to('.mask-clip-path', {
+                width: '100vw',
+                height: '100vh',
+                borderRadius: 0,
+            });
+
+        clipAnimation.to('#centered-text', {
+            opacity: 1,
+            duration: 0.5,
         })
     })
 
@@ -49,6 +55,9 @@ const About = () => {
             className="absolute left-0 top-0 size-full object-cover"
           />
         </div>
+        <h2 id="centered-text" className="absolute top-[75%] left-[75%] -translate-x-1/2 -translate-y-1/2 text-white text-6xl font-neue-bold text-center opacity-0 z-[200] uppercase">
+            Explore the world with life
+        </h2>
       </div>
     </div>
   )
