@@ -9,8 +9,8 @@ const navItems = [ "Features", "About", "Contact"];
 
 const NavBar = () => {
   // State for toggling audio and visual indicator
-  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
-  const [isIndicatorActive, setIsIndicatorActive] = useState(false);
+  const [isAudioPlaying, setIsAudioPlaying] = useState(true);
+  const [isIndicatorActive, setIsIndicatorActive] = useState(true);
 
   // Refs for audio and navigation container
   const audioElementRef = useRef(null);
@@ -61,13 +61,23 @@ const NavBar = () => {
     });
   }, [isNavVisible]);
 
+  // Add new effect to play audio on mount
+  useEffect(() => {
+    audioElementRef.current.play().catch((error) => {
+      // Handle autoplay restrictions by setting states to false if autoplay fails
+      console.log("Autoplay failed:", error);
+      setIsAudioPlaying(false);
+      setIsIndicatorActive(false);
+    });
+  }, []); // Empty dependency array means this runs once on mount
+
   return (
     <div
       ref={navContainerRef}
       className="fixed inset-x-0 top-4 z-50 h-16 border-none transition-all duration-700 sm:inset-x-6"
     >
       <header className="absolute top-1/2 w-full -translate-y-1/2">
-        <nav className="flex size-full items-center justify-between p-4 !font-neue-medium">
+        <nav className="flex size-full items-center justify-between p-4 ">
           {/* Logo and Visit button */}
           <div className="flex items-center gap-7">
             <img src="/img/logo.png" alt="logo" className="w-16" />
@@ -87,7 +97,7 @@ const NavBar = () => {
                 <a
                   key={index}
                   href={`#${item.toLowerCase()}`}
-                  className="nav-hover-btn"
+                  className="nav-hover-btn !font-neue-roman"
                 >
                   {item}
                 </a>

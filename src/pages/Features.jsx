@@ -17,7 +17,7 @@ const Features = () => {
             stagger: 0.5,
             delay: 0.5,
             scrollTrigger:{
-                trigger:'#facts',
+                trigger:'#features',
                 start:'top 20%',
                 end:'center center',
                 toggleActions: 'play none none reverse',
@@ -28,7 +28,7 @@ const Features = () => {
             opacity: 1,
             duration: 1,
             scrollTrigger:{
-                trigger:'#facts',
+                trigger:'#features',
                 start:'top 20%',
                 end:'center center',
                 toggleActions: 'play none none reverse',
@@ -51,7 +51,7 @@ const Features = () => {
     }, [])
 
     return (
-        <section className='bg-black pb-52 p-4' id='facts'>
+        <section className='bg-black pb-52 p-4' id='features'>
             <div className='container mx-auto px-3 md:px-10'>
                 <div className='px-5 py-32'>
                     <p className='text-white text-center font-circular-web text-4xl uppercase'>

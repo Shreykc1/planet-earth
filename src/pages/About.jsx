@@ -40,7 +40,7 @@ const About = () => {
             {/* <div className='mt-5 text-center text-4xl leading-[0.8] md:text-[6rem] uppercase font-neue-bold'>
                 Discover the planet we<br/>live on
             </div> */}
-            <AnimatedText title="Discover the planet we live in" containerClass="!font-neue-bold" />
+            <AnimatedText title="Discover the planet we live in" containerClass="!font-neue-bold !text-black" />
             <div className='about-subtext'>
                 <p >
                     We are a team of scientists, researchers, and educators who are passionate about sharing our knowledge of the planet we live on. Our goal is to make science accessible and engaging for everyone, and to inspire a love of learning about our world.
